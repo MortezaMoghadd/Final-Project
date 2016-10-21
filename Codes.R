@@ -709,7 +709,7 @@ df <- df %>% group_by(full_visitor_id, date, visit_number, total_time_clean, tot
 df <- df %>%
     select(-hit_number)
 
-# Let's explore the data with Trifacta
+# Let's explore the data again
 
 ggplot(df, aes(x = product_clicked, fill = factor(product_clicked))) +
   geom_bar(aes(y = (..count..)/sum(..count..))) +
