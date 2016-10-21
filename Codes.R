@@ -16,9 +16,7 @@ library(ROCR)#ROC
 library(caTools)
 library()
 
-@
-
-<<>>=
+#############################
 # loading data
 Output_1003_FromPC <- read.csv("VDAO_0410_To_07102016_Final_10032016.csv", sep = ",", fill=TRUE)
 # Sorting
@@ -272,8 +270,8 @@ Output_1003_FromPC_clean<- Output_1003_FromPC_clean %>%
 # Clean-Ignore IDs, Outputs, Missing}
 
 ############ Removing extra columns
-We remove extra columns that we don't need
-### Removing client_id, plan_id, person_id, session_id, businessid, ssopurpose as we don't have data for all of observations
+#We remove extra columns that we don't need
+### Removing varianles that we dont have data for all of observations
 Output_1003_FromPC_clean <- Output_1003_FromPC_clean %>%
              select(-client_id, -plan_id, -person_id, -session_id, -ssopurpose, -businessid)
 # "hits_is_entrance" , "hits_is_exit"
