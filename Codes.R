@@ -1109,12 +1109,12 @@ inspect (rules.sorted.by.support [1:30])
 #association rules sorted by confidence}
 
 rules.sorted.by.confidence= sort(rules2, by='confidence')
-inspect (rules.sorted.by.support [1:40])
+inspect (rules.sorted.by.confidence [1:40])
 
 #association rules sorted by lift
 
 rules.sorted.by.lift = sort(rules2, by='lift')
-inspect (rules.sorted.by.support [1:30])
+inspect (rules.sorted.by.lift [1:30])
 
   
 #Pruning Redundant Rules- Rules only for product_clicked=TRUE}
