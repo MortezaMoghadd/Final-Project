@@ -1482,4 +1482,13 @@ accuracy.test<-sum(diag(mat.test)/1733*100)
 accuracy.test #74.14
 #accuracy for train
 accuracy #79.25
-
+                      
+#-------------------------------------------------------------- NEW AUC on Test
+# Compute AUC for predicting Class with the model - The new AUC 
+probnew <- predict(mylogit2, newdata=dfrulesF3.test, type="response")
+prednew <- prediction(probnew, dfrulesF3.test$product_clicked)
+perfnew <- performance(prednew, measure = "tpr", x.measure = "fpr")
+plot(perfnew)
+aucnew <- performance(prednew, measure = "auc")
+aucnew <- aucnew@y.values[[1]]
+aucnew #0.70 -> less than accuracy.test =74.14
